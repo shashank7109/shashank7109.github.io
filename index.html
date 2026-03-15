@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shashank Bindal | Software Engineer</title>
+  <meta name="description" content="Shashank Bindal — Full-Stack & AI/ML Engineer building web, mobile, and AI products. RAG pipelines, LangChain, AWS Bedrock, Next.js, FastAPI, Flutter." />
+  <meta property="og:title" content="Shashank Bindal | Software Engineer" />
+  <meta property="og:description" content="Full-Stack & AI/ML Engineer. RAG pipelines, LangChain, AWS Bedrock, Next.js, FastAPI, Flutter." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Noise -->
+<div class="noise" aria-hidden="true"></div>
+
+<!-- Cursor -->
+<div class="cursor" aria-hidden="true">
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+</div>
+
+<!-- ─── NAV ──────────────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="cursor:none">
+    <div class="nav-logo-icon" data-cursor>S</div>
+    <span class="nav-logo-text">SHASHANK<span>.</span></span>
+  </div>
+  <div class="nav-links">
+    <button data-scroll="work">Work</button>
+    <button data-scroll="open-source" style="display:none">Open Source</button>
+    <button class="nav-contact" data-scroll="contact">
+      <span>Contact</span>
+      <div class="line"></div>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-grain" aria-hidden="true"></div>
+  <div class="hero-glow"  aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <!-- Left -->
+    <div class="hero-left">
+
+      <!-- Eyebrow -->
+      <div class="hero-eyebrow hero-anim">
+        <div class="dot"></div>
+        <span>Available for collaboration</span>
+      </div>
+
+      <!-- Name -->
+      <div class="hero-name hero-anim">
+        <h1>Shashank</h1>
+        <div class="accent-dot"></div>
+      </div>
+
+      <!-- Rule -->
+      <div class="hero-rule hero-anim"></div>
+
+      <!-- Role typewriter -->
+      <div class="hero-role hero-anim">
+        <span>
+          <span class="slash">/ </span><span id="typewriter"></span><span class="hero-cursor"></span>
+        </span>
+      </div>
+
+      <!-- Description -->
+      <p class="hero-desc hero-anim">
+        Building across web, mobile &amp; <span class="hl">AI/ML</span> — from production RAG
+        pipelines to cross-platform apps. Startup collaborator. Open source contributor.
+      </p>
+
+      <!-- CTA -->
+      <div class="hero-cta hero-anim">
+        <a href="https://github.com/shashank7109" target="_blank" rel="noopener noreferrer" data-cursor>
+          <span>GitHub</span>
+          <div class="cta-line"></div>
+        </a>
+        <a href="https://linkedin.com/in/shashankbindal07" target="_blank" rel="noopener noreferrer" data-cursor>
+          <span>LinkedIn</span>
+          <div class="cta-line"></div>
+        </a>
+        <a href="shashank_resume.pdf" download data-cursor>
+          <span>Résumé</span>
+          <svg class="resume-arrow" width="10" height="10" viewBox="0 0 10 10" fill="none" style="color:rgba(255,255,255,.35)">
+            <path d="M5 1v6M2 5l3 3 3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Right — 3D portrait -->
+    <div class="hero-right hero-anim">
+      <div class="tilt-wrap" data-cursor>
+        <div class="tilt-inner">
+          <div class="tilt-glow"></div>
+          <div class="portrait-frame">
+            <img src="assets/images/Gemini_Generated_Image_g713hcg713hcg713.png"
+                 alt="Shashank Bindal — pixelated portrait" />
+            <div class="portrait-scanlines"></div>
+            <div class="portrait-shimmer"></div>
+            <div class="portrait-fade"></div>
+          </div>
+          <div class="portrait-label">
+            <span>B.Tech IT · RGIPT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-ind hero-anim">
+    <div class="scroll-line-wrap"><div class="scroll-line-fill"></div></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─────────────────────────────────────────────────────────────── -->
+<section id="about">
+  <div class="about-inner">
+
+    <!-- Header -->
+    <div class="about-header">
+      <div class="about-header-line"></div>
+      <span class="section-label reveal-up">About</span>
+    </div>
+
+    <!-- Grid -->
+    <div class="about-grid">
+      <!-- Bio -->
+      <div class="about-bio">
+        <h2 class="about-bio-head reveal-up">
+          Engineering at<br>
+          <span class="ghost">the intersection.</span>
+        </h2>
+        <p class="reveal-up delay-100">
+          I'm Shashank — a B.Tech IT student at RGIPT, building across the full stack.
+          From pixel-perfect web interfaces to production-grade AI pipelines, I care
+          about the craft at every layer.
+        </p>
+        <p class="reveal-up delay-200" style="color:rgba(255,255,255,.15)">
+          Currently interning at Myschord (QuizerAI) and shipping cross-platform products.
+          I believe good engineering is invisible — it just works.
+        </p>
+      </div>
+
+      <!-- Education -->
+      <div>
+        <span class="edu-label reveal-up">Education</span>
+        <div class="edu-card reveal-up">
+          <div class="edu-card-top">
+            <div>
+              <div class="edu-institution">Rajiv Gandhi Institute of Petroleum Technology (RGIPT)</div>
+              <div class="edu-degree">B.Tech in Information Technology</div>
+            </div>
+            <div class="edu-period">Aug 2024 – Present</div>
+          </div>
+          <div class="edu-location">Amethi, Uttar Pradesh</div>
+        </div>
+        <a href="shashank_resume.pdf" download class="resume-dl reveal-up" style="margin-top:20px">
+          <span>Download Résumé</span>
+          <div class="line"></div>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="color:var(--accent);opacity:.7">
+            <path d="M6 1v7M3 5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div>
+      <div class="tech-header">
+        <span class="section-label reveal-up" style="margin-bottom:0">Tech Stack</span>
+        <span class="tech-hint reveal-up">Hover to reveal color</span>
+      </div>
+      <div class="marquee-rows">
+
+        <!-- Row 1 — Languages (left) -->
+        <div class="marquee-row">
+          <div class="marquee-track left">
+            <!-- tripled for seamless loop -->
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin"><span>Kotlin</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"><span>JavaScript</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TS"><span>TypeScript</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><span>SQL</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin"><span>Kotlin</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"><span>JavaScript</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TS"><span>TypeScript</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><span>SQL</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin"><span>Kotlin</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"><span>JavaScript</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TS"><span>TypeScript</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><span>SQL</span></div>
+          </div>
+        </div>
+
+        <!-- Row 2 — Frameworks (right) -->
+        <div class="marquee-row">
+          <div class="marquee-track right">
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI"><span>FastAPI</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"><span>Next.js</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"><span>Flutter</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express"><span>Express.js</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" alt="Three.js"><span>Three.js</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"><span>Tailwind</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI"><span>FastAPI</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"><span>Next.js</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"><span>Flutter</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express"><span>Express.js</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" alt="Three.js"><span>Three.js</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"><span>Tailwind</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI"><span>FastAPI</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"><span>Next.js</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"><span>Flutter</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express"><span>Express.js</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" alt="Three.js"><span>Three.js</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"><span>Tailwind</span></div>
+          </div>
+        </div>
+
+        <!-- Row 3 — AI/ML & Cloud (left) -->
+        <div class="marquee-row">
+          <div class="marquee-track left2">
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"><span>TensorFlow</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><span>NumPy</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><span>Pandas</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span>AWS</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg" alt="Kubernetes"><span>Kubernetes</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis"><span>Redis</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="LangChain"><span>LangChain</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"><span>TensorFlow</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><span>NumPy</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><span>Pandas</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span>AWS</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg" alt="Kubernetes"><span>Kubernetes</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis"><span>Redis</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="LangChain"><span>LangChain</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"><span>TensorFlow</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><span>NumPy</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><span>Pandas</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span>AWS</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg" alt="Kubernetes"><span>Kubernetes</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis"><span>Redis</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="LangChain"><span>LangChain</span></div>
+          </div>
+        </div>
+
+        <!-- Row 4 — DBs & Tools (right) -->
+        <div class="marquee-row">
+          <div class="marquee-track right">
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"><span>PostgreSQL</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dynamodb/dynamodb-original.svg" alt="DynamoDB"><span>DynamoDB</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><span>GitHub</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins"><span>Jenkins</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"><span>PostgreSQL</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dynamodb/dynamodb-original.svg" alt="DynamoDB"><span>DynamoDB</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><span>GitHub</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins"><span>Jenkins</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"><span>PostgreSQL</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dynamodb/dynamodb-original.svg" alt="DynamoDB"><span>DynamoDB</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><span>GitHub</span></div>
+            <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins"><span>Jenkins</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── WORK ──────────────────────────────────────────────────────────────── -->
+<section id="work">
+  <div class="work-inner">
+
+    <!-- Section header -->
+    <div class="work-hdr">
+      <div>
+        <span class="section-label reveal-up">Work Experience</span>
+        <h2 class="section-heading reveal-up">Things I've<br><span class="ghost">shipped.</span></h2>
+      </div>
+      <div class="roles-badge reveal-up">
+        <div class="dot"></div>
+        <span>2 roles</span>
+      </div>
+    </div>
+
+    <!-- Accordion -->
+    <div>
+
+      <!-- Job 1 -->
+      <div class="accordion-item reveal-up">
+        <button class="accordion-btn" data-cursor>
+          <span class="acc-idx">01</span>
+          <div class="acc-main">
+            <div class="acc-role">Software Engineering Intern — Full-Stack</div>
+            <div class="acc-company">Myschord · QuizerAI</div>
+          </div>
+          <div class="acc-meta">
+            <span class="acc-period">Dec 2025 – Present</span>
+            <span class="acc-location">Remote</span>
+          </div>
+          <div class="acc-toggle">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body">
+          <div class="acc-content">
+            <div class="metrics-grid">
+              <div class="metric-card"><div class="metric-val">5K+</div><div class="metric-lbl">Concurrent Users</div></div>
+              <div class="metric-card"><div class="metric-val">40%</div><div class="metric-lbl">Lower Latency</div></div>
+              <div class="metric-card"><div class="metric-val">60%</div><div class="metric-lbl">Faster API</div></div>
+              <div class="metric-card"><div class="metric-val">90%</div><div class="metric-lbl">Fewer Env Bugs</div></div>
+            </div>
+            <a href="https://quizerai.com" target="_blank" rel="noopener noreferrer" class="proj-link" data-cursor>
+              <span>QuizerAI — AI Quiz & Classroom SaaS</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M4 2h6v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <ul class="bullet-list">
+              <li><div class="bullet-bar"></div><p>Architected a multi-tenant RBAC engine supporting Student, Teacher, and Admin roles with backend-authoritative subscription gating (Free/Go/Pro) across 3 privilege tiers.</p></li>
+              <li><div class="bullet-bar"></div><p>Designed and shipped a production RAG pipeline using LangChain and AWS Bedrock with vector-indexed knowledge base, orchestrated via multi-instance Lambda, scaling to 5,000+ concurrent users at 40% lower inference latency.</p></li>
+              <li><div class="bullet-bar"></div><p>Executed a MySQL → DynamoDB migration improving API response by 60%, and containerized microservices via Docker cutting environment bugs by 90%.</p></li>
+              <li><div class="bullet-bar"></div><p>Built role-scoped Recharts analytics dashboards and integrated Google OAuth 2.0 with JWT-based session management and RBAC permission propagation.</p></li>
+            </ul>
+            <div class="stack-tags">
+              <span class="tag tag-muted">Next.js</span><span class="tag tag-muted">FastAPI</span><span class="tag tag-muted">AWS Bedrock</span><span class="tag tag-muted">Lambda</span><span class="tag tag-muted">DynamoDB</span><span class="tag tag-muted">LangChain</span><span class="tag tag-muted">Redis</span><span class="tag tag-muted">Docker</span><span class="tag tag-muted">JWT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job 2 -->
+      <div class="accordion-item reveal-up">
+        <button class="accordion-btn" data-cursor>
+          <span class="acc-idx">02</span>
+          <div class="acc-main">
+            <div class="acc-role">QuizerAI Partner — Platform Integration</div>
+            <div class="acc-company">ISKCON · gitaforyouth.com</div>
+          </div>
+          <div class="acc-meta">
+            <span class="acc-period">Jan 2025 – Present</span>
+            <span class="acc-location">Remote</span>
+          </div>
+          <div class="acc-toggle">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body">
+          <div class="acc-content">
+            <div class="metrics-grid">
+              <div class="metric-card"><div class="metric-val">18</div><div class="metric-lbl">Chapters Processed</div></div>
+              <div class="metric-card"><div class="metric-val">95%+</div><div class="metric-lbl">Parse Accuracy</div></div>
+              <div class="metric-card"><div class="metric-val">35%</div><div class="metric-lbl">Token Cost Cut</div></div>
+              <div class="metric-card"><div class="metric-val">70%</div><div class="metric-lbl">LLM Cache Hits</div></div>
+            </div>
+            <a href="https://gitaforyouth.com" target="_blank" rel="noopener noreferrer" class="proj-link" data-cursor>
+              <span>Bhagavad Gita Certification Platform</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M4 2h6v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <ul class="bullet-list">
+              <li><div class="bullet-bar"></div><p>Launched a full-stack certification platform with chapter-gated quiz progression and an AWS Lambda-orchestrated PDF ingestion pipeline processing 18 chapters at 95%+ parse accuracy into MongoDB.</p></li>
+              <li><div class="bullet-bar"></div><p>Designed an ontology-driven NLP purport classifier with token-optimized semantic chunking, cutting AWS Bedrock token costs by 35%.</p></li>
+              <li><div class="bullet-bar"></div><p>Implemented a Redis TTL cache layer reducing redundant LLM inference calls by 70% and delivered Recharts dashboards tracking certification conversion and cohort engagement.</p></li>
+            </ul>
+            <div class="stack-tags">
+              <span class="tag tag-muted">Next.js</span><span class="tag tag-muted">FastAPI</span><span class="tag tag-muted">AWS Bedrock</span><span class="tag tag-muted">Lambda</span><span class="tag tag-muted">MongoDB</span><span class="tag tag-muted">LangChain</span><span class="tag tag-muted">Redis</span><span class="tag tag-muted">Recharts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-end"></div>
+    </div>
+
+    <!-- Projects -->
+    <div class="proj-section">
+      <div class="proj-hdr">
+        <div>
+          <span class="section-label reveal-up">Projects</span>
+          <h2 class="section-heading reveal-up">Things I've<br><span class="ghost">built.</span></h2>
+        </div>
+        <a href="https://github.com/shashank7109" target="_blank" rel="noopener noreferrer" class="github-link reveal-up" data-cursor>
+          <span>All on GitHub</span>
+          <div class="line"></div>
+        </a>
+      </div>
+
+      <div class="project-cards">
+
+        <!-- AlertyAI -->
+        <div class="project-card reveal-up">
+          <div class="card-glow"></div>
+          <div class="card-accent-bar"></div>
+          <div class="card-main">
+            <div class="card-logo" style="background:#fff">
+              <img src="assets/images/alertyAI_logo.png" alt="AlertyAI" />
+            </div>
+            <div class="card-info">
+              <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+                <span class="card-title">AlertyAI</span>
+                <span style="color:rgba(255,255,255,.15);font-size:14px">—</span>
+                <span class="card-subtitle">Cross-Platform AI Task &amp; Voice Scheduler</span>
+              </div>
+              <a href="https://alertyai.com" target="_blank" rel="noopener noreferrer" class="card-url" onclick="event.stopPropagation()">
+                <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1 8L8 1M3 1h5v5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>alertyai.com</span>
+              </a>
+              <div class="card-stack-hover">
+                <div class="stack-tags">
+                  <span class="tag tag-muted">FastAPI</span><span class="tag tag-muted">MongoDB</span><span class="tag tag-muted">Next.js</span><span class="tag tag-muted">Flutter</span><span class="tag tag-muted">Kotlin</span><span class="tag tag-muted">Sarvam AI</span><span class="tag tag-muted">OCR</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-right">
+              <span class="card-period">Jan 2026 – Present</span>
+              <button class="card-expand-btn" data-cursor>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+              <a href="https://alertyai.com" target="_blank" rel="noopener noreferrer" class="card-visit" data-cursor onclick="event.stopPropagation()">
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 9.5L9.5 1.5M3.5 1.5h6v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-detail">
+            <div class="card-detail-inner">
+              <ul class="bullet-list">
+                <li><div class="bullet-bar"></div><p>Engineered a cross-platform AI productivity app with Flutter/Kotlin Android client and Next.js web frontend, achieving 60% reduction in task-creation friction.</p></li>
+                <li><div class="bullet-bar"></div><p>Integrated Sarvam AI STT/TTS for a voice-to-task pipeline with sub-2s processing latency, applying NLP subtask decomposition cutting manual planning overhead by 50%.</p></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- IEEE RGIPT -->
+        <div class="project-card reveal-up">
+          <div class="card-glow"></div>
+          <div class="card-accent-bar"></div>
+          <div class="card-main">
+            <div class="card-logo" style="background:rgba(255,255,255,0.05)">
+              <img src="assets/images/logo.png" alt="IEEE RGIPT" />
+            </div>
+            <div class="card-info">
+              <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+                <span class="card-title">IEEE RGIPT</span>
+                <span style="color:rgba(255,255,255,.15);font-size:14px">—</span>
+                <span class="card-subtitle">Official Student Chapter Website</span>
+              </div>
+              <a href="https://ieeergipt.in" target="_blank" rel="noopener noreferrer" class="card-url" onclick="event.stopPropagation()">
+                <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1 8L8 1M3 1h5v5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>ieeergipt.in</span>
+              </a>
+              <div class="card-stack-hover">
+                <div class="stack-tags">
+                  <span class="tag tag-muted">Next.js</span><span class="tag tag-muted">Three.js</span><span class="tag tag-muted">Express.js</span><span class="tag tag-muted">MongoDB</span><span class="tag tag-muted">SendGrid</span><span class="tag tag-muted">Canvas API</span><span class="tag tag-muted">JWT</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-right">
+              <span class="card-period">Aug 2025 – Present</span>
+              <button class="card-expand-btn" data-cursor>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+              <a href="https://ieeergipt.in" target="_blank" rel="noopener noreferrer" class="card-visit" data-cursor onclick="event.stopPropagation()">
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 9.5L9.5 1.5M3.5 1.5h6v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-detail">
+            <div class="card-detail-inner">
+              <ul class="bullet-list">
+                <li><div class="bullet-bar"></div><p>Deployed the official RGIPT IEEE chapter platform with event registration workflows, a secure admin CMS, a Canvas API dynamic ID card generator, and a SendGrid email pipeline serving 980+ members.</p></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ────────────────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="contact-inner">
+    <!-- Left -->
+    <div>
+      <span class="section-label reveal-up">Contact</span>
+      <h2 class="contact-cta-head reveal-up">Let's build<br>something<br><span class="ghost">real.</span></h2>
+      <p class="contact-desc reveal-up">
+        Open to internships, freelance work, open source collaboration, and helping
+        startups figure out their engineering challenges.
+      </p>
+      <div class="avail-badge reveal-up">
+        <div class="dot"></div>
+        <span>Currently available</span>
+      </div>
+    </div>
+    <!-- Right -->
+    <div class="contact-links">
+      <a href="https://linkedin.com/in/shashankbindal07" target="_blank" rel="noopener noreferrer" class="contact-link-card reveal-up" data-cursor>
+        <div>
+          <div class="cl-label">Professional</div>
+          <div class="cl-title">LinkedIn</div>
+          <div class="cl-sub">/in/shashankbindal07</div>
+        </div>
+        <div class="cl-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 14L14 2M5 2h9v9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="https://github.com/shashank7109" target="_blank" rel="noopener noreferrer" class="contact-link-card reveal-up" data-cursor>
+        <div>
+          <div class="cl-label">Code</div>
+          <div class="cl-title">GitHub</div>
+          <div class="cl-sub">/shashank7109</div>
+        </div>
+        <div class="cl-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 14L14 2M5 2h9v9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="mailto:bindalshashank.89@gmail.com" class="contact-link-card reveal-up" data-cursor>
+        <div>
+          <div class="cl-label">Email</div>
+          <div class="cl-title">bindalshashank.89@gmail.com</div>
+          <div class="cl-sub">Drop me a message</div>
+        </div>
+        <div class="cl-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 14L14 2M5 2h9v9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="tel:+918923695717" class="contact-link-card reveal-up" data-cursor>
+        <div>
+          <div class="cl-label">Phone</div>
+          <div class="cl-title">+91 8923695717</div>
+          <div class="cl-sub">Available for calls</div>
+        </div>
+        <div class="cl-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 14L14 2M5 2h9v9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div class="footer-logo-icon">S</div>
+      <span class="footer-copy">© 2026 Shashank Bindal</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://linkedin.com/in/shashankbindal07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/shashank7109" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
