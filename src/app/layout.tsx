@@ -60,6 +60,9 @@ export const metadata: Metadata = {
       { url: '/favicon.ico', type: 'image/x-icon' }
     ],
   },
+  verification: {
+    google: 'your-google-site-verification-id-here', // Replace with your actual GSC verification ID
+  },
 };
 
 export default function RootLayout({
@@ -69,6 +72,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Shashank Bindal',
+              url: process.env.NEXT_PUBLIC_SITE_URL || 'https://shashankpo8729.builtwithrocket.new',
+              jobTitle: 'Software Engineer',
+              sameAs: ['https://linkedin.com/in/shashankbindal07'],
+            }),
+          }}
+        />
+      </head>
       <body>{children}
 
         <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fshashankpo8729back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.17" />
