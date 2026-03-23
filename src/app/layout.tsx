@@ -30,12 +30,12 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL || 'https://shashankpo8729.builtwithrocket.new',
+    canonical: process.env.NEXT_PUBLIC_SITE_URL || 'https://shashankbindal.me',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://shashankpo8729.builtwithrocket.new',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://shashankbindal.me',
     siteName: 'Shashank Bindal — Software Engineer',
     title: 'Shashank Bindal | Software Engineer',
     description: 'Full-Stack & AI/ML Engineer building web, mobile, and AI products. RAG pipelines, LangChain, AWS Bedrock, Next.js, FastAPI, Flutter.',
