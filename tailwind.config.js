@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['Manrope', 'sans-serif'],
-        pixel: ['"Pixelify Sans"', 'monospace'],
-        body: ['DM Sans', 'sans-serif'],
+        display: ['var(--font-display)', 'sans-serif'],
+        pixel: ['var(--font-pixel)', 'monospace'],
+        body: ['var(--font-body)', 'sans-serif'],
       },
       colors: {
         bg: {

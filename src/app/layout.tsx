@@ -1,7 +1,29 @@
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
+import { Manrope, DM_Sans, Pixelify_Sans } from 'next/font/google';
 import '../styles/tailwind.css';
 
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-display',
+  display: 'swap',
+});
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  style: ['normal', 'italic'],
+  variable: '--font-body',
+  display: 'swap',
+});
+
+const pixelifySans = Pixelify_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-pixel',
+  display: 'swap',
+});
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -71,7 +93,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${manrope.variable} ${dmSans.variable} ${pixelifySans.variable}`}>
       <head>
         <script
           type="application/ld+json"
