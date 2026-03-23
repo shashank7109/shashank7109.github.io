@@ -1,0 +1,36 @@
+
+> shashankportfolio@0.1.0 build
+> next build
+
+(node:9972) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Portfolio/image-hosts.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\Portfolio\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+   Γû▓ Next.js 15.1.11
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+   Generating static pages (0/6) ...
+   Generating static pages (1/6) 
+   Generating static pages (2/6) 
+   Generating static pages (4/6) 
+ Γ£ô Generating static pages (6/6)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+Γöî Γùï /_not-found                          137 B           106 kB
+Γö£ Γùï /homepage                            28.6 kB         208 kB
+Γö£ Γùï /robots.txt                          0 B                0 B
+Γöö Γùï /sitemap.xml                         0 B                0 B
++ First Load JS shared by all            106 kB
+  Γö£ chunks/4bd1b696-d93fd3b10efbf632.js  53 kB
+  Γö£ chunks/517-c9b52834d8856407.js       50.6 kB
+  Γöö other shared chunks (total)          2.07 kB
+
+
+Γùï  (Static)  prerendered as static content
+
