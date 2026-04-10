@@ -4,8 +4,6 @@ export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://shashankbindal.me';
-  
-  // We use current date for build-time static generation
   const lastModified = new Date();
 
   return [
@@ -16,10 +14,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/homepage/`,
+      url: `${baseUrl}/blog/`,
       lastModified,
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
   ];
 }

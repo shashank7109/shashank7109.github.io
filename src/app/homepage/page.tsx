@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import ProjectsSection from './components/ProjectsSection';
 import OpenSourceSection from './components/OpenSourceSection';
+import BlogSection from './components/BlogSection';
 import ContactSection from './components/ContactSection';
 
 export default function Homepage() {
@@ -21,6 +22,7 @@ export default function Homepage() {
         <AboutSection />
         <ProjectsSection />
         <OpenSourceSection />
+        <BlogSection />
         <ContactSection />
       </main>
 

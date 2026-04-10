@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 const ROLES = ['Full-Stack Engineer', 'AI-ML Builder', 'Open Source Contributor'];
@@ -8,17 +8,14 @@ const ROLES = ['Full-Stack Engineer', 'AI-ML Builder', 'Open Source Contributor'
 export default function HeroSection() {
   const cursorDotRef = useRef<HTMLDivElement>(null);
   const cursorRingRef = useRef<HTMLDivElement>(null);
+  const imageCardRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
   const ringPos = useRef({ x: 0, y: 0 });
-  const imageRef = useRef<HTMLDivElement>(null);
+  const tiltRef = useRef({ x: 0, y: 0 });
   const [heroVisible, setHeroVisible] = useState(false);
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const [isHoveringImage, setIsHoveringImage] = useState(false);
-  const tiltRef = useRef({ x: 0, y: 0 });
-  const rafRef = useRef<number>(0);
 
   // Hero entrance
   useEffect(() => {
@@ -80,40 +77,44 @@ export default function HeroSection() {
     };
   }, []);
 
-  // 3D tilt effect — smooth spring via rAF
-  const handleImageMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const el = imageRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top + rect.height / 2;
-    const dx = (e.clientX - cx) / (rect.width / 2);
-    const dy = (e.clientY - cy) / (rect.height / 2);
-    tiltRef.current = { x: dy * -18, y: dx * 18 };
-  }, []);
-
-  const handleImageMouseLeave = useCallback(() => {
-    setIsHoveringImage(false);
-    tiltRef.current = { x: 0, y: 0 };
-  }, []);
-
-  const handleImageMouseEnter = useCallback(() => {
-    setIsHoveringImage(true);
-  }, []);
-
-  // Spring animation loop for tilt
   useEffect(() => {
-    let current = { x: 0, y: 0 };
-    const animate = () => {
-      const target = tiltRef.current;
-      current.x += (target.x - current.x) * 0.1;
-      current.y += (target.y - current.y) * 0.1;
-      setTilt({ x: current.x, y: current.y });
-      rafRef.current = requestAnimationFrame(animate);
+    const card = imageCardRef.current;
+    if (!card) return;
+    let frameId = 0;
+
+    const applyTilt = () => {
+      const targetX = tiltRef.current.x;
+      const targetY = tiltRef.current.y;
+      card.style.transform = `perspective(900px) rotateX(${targetX}deg) rotateY(${targetY}deg) translateY(0) scale(1)`;
+      frameId = requestAnimationFrame(applyTilt);
     };
-    rafRef.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(rafRef.current);
+
+    const resetTilt = () => {
+      tiltRef.current = { x: 0, y: 0 };
+    };
+
+    applyTilt();
+    card.addEventListener('mouseleave', resetTilt);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      card.removeEventListener('mouseleave', resetTilt);
+    };
   }, []);
+
+  const handleImageMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    const card = imageCardRef.current;
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+    tiltRef.current = {
+      x: -(y * 4.5),
+      y: x * 5.5,
+    };
+  };
 
   return (
     <>
@@ -153,10 +154,10 @@ export default function HeroSection() {
         />
 
         {/* Main content — split layout */}
-        <div className="relative z-10 w-full max-w-[1280px] mx-auto px-8 md:px-14 lg:px-20 pt-32 pb-28 flex flex-col lg:flex-row items-center lg:items-center gap-16 lg:gap-0">
+        <div className="relative z-10 w-full max-w-[1280px] mx-auto px-8 md:px-14 lg:px-20 pt-28 pb-24 flex flex-col lg:flex-row items-start lg:items-center gap-16 lg:gap-12">
 
           {/* LEFT — Text content */}
-          <div className="flex-1 flex flex-col justify-center">
+          <div className="flex-1 flex flex-col justify-center max-w-[720px]">
 
             {/* Eyebrow tag */}
             <div
@@ -183,7 +184,7 @@ export default function HeroSection() {
                   fontSize: 'clamp(2.8rem, 7.5vw, 7.2rem)',
                   letterSpacing: '0.02em',
                   lineHeight: '1.05',
-                  background: 'linear-gradient(170deg, #ffffff 0%, rgba(255,255,255,0.75) 40%, rgba(255,255,255,0.12) 100%)',
+                  background: 'linear-gradient(170deg, color-mix(in srgb, var(--fg) 100%, transparent) 0%, color-mix(in srgb, var(--fg) 78%, transparent) 45%, color-mix(in srgb, var(--fg) 24%, transparent) 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -202,7 +203,7 @@ export default function HeroSection() {
             <div
               className={`mt-10 mb-8 h-[1px] transition-all duration-1000 ${heroVisible ? 'opacity-100' : 'opacity-0'}`}
               style={{
-                background: 'linear-gradient(90deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 60%, transparent 100%)',
+                background: 'linear-gradient(90deg, color-mix(in srgb, var(--fg) 16%, transparent) 0%, color-mix(in srgb, var(--fg) 6%, transparent) 60%, transparent 100%)',
                 transitionDelay: '0.35s',
                 width: heroVisible ? '100%' : '0%',
               }}
@@ -271,11 +272,12 @@ export default function HeroSection() {
               </a>
               <a
                 href="/assets/resume/Shashank_resume.pdf"
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center gap-2 cursor-none"
                 data-cursor
               >
-                <span className="text-[10px] font-display font-600 uppercase tracking-[0.18em] transition-colors duration-300 group-hover:text-white" style={{ color: 'var(--fg-muted)' }}>
+                <span className="text-[10px] font-display font-600 uppercase tracking-[0.18em] transition-colors duration-300" style={{ color: 'var(--fg-muted)' }}>
                   Résumé
                 </span>
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="transition-transform duration-300 group-hover:translate-y-0.5" style={{ color: 'var(--fg-muted)' }}>
@@ -285,148 +287,67 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* RIGHT — 3D tilt portrait */}
           <div
-            className={`lg:w-[420px] xl:w-[480px] flex-shrink-0 flex justify-center lg:justify-end transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`w-full lg:w-[420px] xl:w-[480px] flex-shrink-0 flex justify-center lg:justify-end transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             style={{ transitionDelay: '0.55s' }}
           >
             <div
-              ref={imageRef}
-              onMouseMove={handleImageMouseMove}
-              onMouseEnter={handleImageMouseEnter}
-              onMouseLeave={handleImageMouseLeave}
+              ref={imageCardRef}
+              onMouseMove={handleImageMove}
+              className="relative w-full max-w-[360px] aspect-[4/5] rounded-[24px] overflow-hidden border shadow-[0_24px_70px_rgba(15,23,42,0.14)] will-change-transform"
               style={{
-                perspective: '900px',
+                borderColor: 'var(--border)',
+                background: 'var(--bg-card)',
+                transform: 'perspective(900px) rotateX(0deg) rotateY(0deg) scale(1)',
+                transformStyle: 'preserve-3d',
+                transition: 'transform 280ms cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease',
                 cursor: 'none',
               }}
               data-cursor
             >
-              {/* Tilt wrapper */}
+              <Image
+                src="/assets/images/shashank_image.png"
+                alt="Shashank Bindal portrait"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 420px"
+                style={{
+                  objectFit: 'cover',
+                  objectPosition: 'center top',
+                  filter: 'grayscale(20%) contrast(1.06) brightness(0.94)',
+                }}
+              />
+
               <div
                 style={{
-                  transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(${isHoveringImage ? 1.03 : 1})`,
-                  transition: 'transform 0.08s linear',
-                  transformStyle: 'preserve-3d',
-                  willChange: 'transform',
-                  position: 'relative',
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(8,8,8,0.35) 0%, transparent 48%)',
+                  pointerEvents: 'none',
                 }}
-              >
-                {/* Glow behind image */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: '-20px',
-                    background: 'radial-gradient(ellipse at center, rgba(200,255,0,0.12) 0%, transparent 70%)',
-                    opacity: isHoveringImage ? 1 : 0,
-                    transition: 'opacity 0.5s ease',
-                    borderRadius: '24px',
-                    pointerEvents: 'none',
-                    zIndex: 0,
-                  }}
-                />
+              />
 
-                {/* Image container */}
-                <div
-                  style={{
-                    position: 'relative',
-                    width: '320px',
-                    height: '400px',
-                    borderRadius: '16px',
-                    overflow: 'hidden',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                    boxShadow: isHoveringImage
-                      ? '0 40px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(200,255,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)'
-                      : '0 24px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06)',
-                    transition: 'box-shadow 0.4s ease',
-                    zIndex: 1,
-                  }}
-                >
-                  <Image
-                    src="/assets/images/Gemini_Generated_Image_g713hcg713hcg713.png"
-                    alt="Shashank Bindal — pixelated portrait"
-                    fill
-                    style={{
-                      objectFit: 'cover',
-                      objectPosition: 'center top',
-                      imageRendering: 'pixelated',
-                      filter: `grayscale(${isHoveringImage ? 20 : 60}%) contrast(1.1) brightness(${isHoveringImage ? 0.95 : 0.8})`,
-                      transition: 'filter 0.5s ease',
-                    }}
-                    priority
-                  />
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.035) 4px)',
+                  opacity: 0.18,
+                  pointerEvents: 'none',
+                }}
+              />
 
-                  {/* Scanline overlay */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.12) 4px)',
-                      pointerEvents: 'none',
-                      zIndex: 2,
-                      opacity: isHoveringImage ? 0.4 : 0.7,
-                      transition: 'opacity 0.4s ease',
-                    }}
-                  />
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: '-18px',
+                  background: 'radial-gradient(ellipse at center, rgba(15,118,110,0.16) 0%, transparent 68%)',
+                  filter: 'blur(14px)',
+                  pointerEvents: 'none',
+                  zIndex: 0,
+                }}
+              />
 
-                  {/* Holographic shimmer on hover */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      background: `linear-gradient(
-                        ${135 + tilt.y * 2}deg,
-                        rgba(200,255,0,0.06) 0%,
-                        transparent 40%,
-                        rgba(100,200,255,0.04) 70%,
-                        transparent 100%
-                      )`,
-                      pointerEvents: 'none',
-                      zIndex: 3,
-                      opacity: isHoveringImage ? 1 : 0,
-                      transition: 'opacity 0.3s ease',
-                    }}
-                  />
-
-                  {/* Bottom gradient fade */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      height: '40%',
-                      background: 'linear-gradient(to top, rgba(8,8,8,0.8) 0%, transparent 100%)',
-                      pointerEvents: 'none',
-                      zIndex: 2,
-                    }}
-                  />
-                </div>
-
-                {/* Floating label */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '-14px',
-                    right: '-14px',
-                    background: 'rgba(8,8,8,0.9)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    borderRadius: '8px',
-                    padding: '8px 14px',
-                    backdropFilter: 'blur(12px)',
-                    zIndex: 4,
-                    transform: 'translateZ(20px)',
-                    opacity: isHoveringImage ? 1 : 0,
-                    transition: 'opacity 0.3s ease',
-                  }}
-                >
-                  <span
-                    className="text-[10px] font-display font-600 uppercase tracking-[0.15em]"
-                    style={{ color: 'var(--accent)' }}
-                  >
-                    B.Tech IT · RGIPT
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -443,7 +364,7 @@ export default function HeroSection() {
               height: '56px',
               position: 'relative',
               overflow: 'hidden',
-              background: 'rgba(255,255,255,0.08)',
+              background: 'color-mix(in srgb, var(--fg) 12%, transparent)',
             }}
           >
             <div

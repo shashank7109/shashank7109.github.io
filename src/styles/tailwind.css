@@ -15,6 +15,73 @@
   --font-body: 'DM Sans', sans-serif;
 }
 
+:root[data-theme='light'] {
+  --bg: #eef2f6;
+  --bg-secondary: #e6edf4;
+  --bg-card: #ffffff;
+  --fg: #0f172a;
+  --fg-muted: rgba(16, 21, 34, 0.72);
+  --fg-subtle: rgba(16, 21, 34, 0.56);
+  --accent: #0f766e;
+  --border: rgba(16, 21, 34, 0.14);
+  --border-hover: rgba(16, 21, 34, 0.3);
+}
+
+:root[data-theme='light'] .text-white,
+:root[data-theme='light'] .group:hover .group-hover\:text-white {
+  color: var(--fg) !important;
+}
+
+:root[data-theme='light'] .text-white\/90,
+:root[data-theme='light'] .hover\:text-white\/90:hover {
+  color: color-mix(in srgb, var(--fg) 90%, transparent) !important;
+}
+
+:root[data-theme='light'] .text-white\/60,
+:root[data-theme='light'] .hover\:text-white\/60:hover {
+  color: color-mix(in srgb, var(--fg) 60%, transparent) !important;
+}
+
+:root[data-theme='light'] .text-white\/40,
+:root[data-theme='light'] .hover\:text-white\/40:hover {
+  color: color-mix(in srgb, var(--fg) 40%, transparent) !important;
+}
+
+:root[data-theme='light'] .text-white\/30 {
+  color: color-mix(in srgb, var(--fg) 30%, transparent) !important;
+}
+
+:root[data-theme='light'] .text-white\/25 {
+  color: color-mix(in srgb, var(--fg) 25%, transparent) !important;
+}
+
+:root[data-theme='light'] .bg-white\/30 {
+  background-color: color-mix(in srgb, var(--fg) 24%, transparent) !important;
+}
+
+:root[data-theme='light'] .border-white\/20 {
+  border-color: var(--border-hover) !important;
+}
+
+:root[data-theme='light'] .cursor {
+  mix-blend-mode: normal;
+}
+
+:root[data-theme='light'] .cursor-dot {
+  background: #0f172a;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.72), 0 8px 20px rgba(15, 23, 42, 0.14);
+}
+
+:root[data-theme='light'] .cursor-ring {
+  border-color: rgba(15, 23, 42, 0.35);
+  background: rgba(15, 23, 42, 0.03);
+}
+
+:root[data-theme='light'] body.cursor-hover .cursor-ring {
+  border-color: rgba(15, 118, 110, 0.7);
+  background: rgba(15, 118, 110, 0.08);
+}
+
 *,
 *::before,
 *::after {
@@ -42,6 +109,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: none;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 /* Custom Cursor */
@@ -57,7 +125,7 @@ body {
 .cursor-dot {
   width: 8px;
   height: 8px;
-  background: #ffffff;
+  background: var(--fg);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
@@ -66,7 +134,7 @@ body {
 .cursor-ring {
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid color-mix(in srgb, var(--fg) 50%, transparent);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
@@ -233,8 +301,24 @@ body.cursor-hover .cursor-ring {
 .nav-blur {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background: rgba(8, 8, 8, 0.85);
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
   border-bottom: 1px solid var(--border);
+}
+
+@media (hover: none), (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+
+  .cursor {
+    display: none;
+  }
+
+  a,
+  button,
+  [data-cursor] {
+    cursor: pointer !important;
+  }
 }
 
 /* Magnetic button */

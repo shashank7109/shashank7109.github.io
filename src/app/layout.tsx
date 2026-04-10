@@ -63,10 +63,10 @@ export const metadata: Metadata = {
     description: 'Full-Stack & AI/ML Engineer building web, mobile, and AI products. RAG pipelines, LangChain, AWS Bedrock, Next.js, FastAPI, Flutter.',
     images: [
       {
-        url: '/assets/images/app_logo.png',
+        url: '/assets/images/shashank_image.png',
         width: 1200,
         height: 630,
-        alt: 'Shashank Bindal — Software Engineer Portfolio',
+        alt: 'Shashank Bindal portrait',
       },
     ],
   },
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Shashank Bindal | Software Engineer',
     description: 'Full-Stack & AI/ML Engineer building web, mobile, and AI products. RAG pipelines, LangChain, AWS Bedrock, Next.js, FastAPI, Flutter.',
-    images: ['/assets/images/app_logo.png'],
+    images: ['/assets/images/shashank_image.png'],
     creator: '@shashankbindal07',
   },
   icons: {
@@ -93,8 +93,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${dmSans.variable} ${pixelifySans.variable}`}>
+    <html lang="en" className={`${manrope.variable} ${dmSans.variable} ${pixelifySans.variable}`} suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var saved=localStorage.getItem('portfolio-theme');var theme=(saved==='light'||saved==='dark')?saved:(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',theme);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

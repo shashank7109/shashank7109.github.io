@@ -74,18 +74,19 @@ export default function ContactSection() {
               Contact
             </span>
             <h2
-              className="reveal-up delay-100 font-display font-800 text-white"
+              className="reveal-up delay-100 font-display font-800"
               style={{
                 fontSize: 'clamp(2.2rem, 6vw, 5rem)',
                 letterSpacing: '-0.04em',
                 lineHeight: '0.92',
+                color: 'var(--fg)',
               }}
             >
               Let's build
               <br />
               something
               <br />
-              <span style={{ color: 'rgba(255,255,255,0.2)' }}>real.</span>
+              <span style={{ color: 'var(--fg-subtle)' }}>real.</span>
             </h2>
 
             <p
@@ -137,8 +138,8 @@ export default function ContactSection() {
                     {link.label}
                   </span>
                   <span
-                    className="font-display font-700 text-white"
-                    style={{ fontSize: 'clamp(0.9rem, 2vw, 1.25rem)', letterSpacing: '-0.02em' }}
+                    className="font-display font-700"
+                    style={{ fontSize: 'clamp(0.9rem, 2vw, 1.25rem)', letterSpacing: '-0.02em', color: 'var(--fg)' }}
                   >
                     {link.title}
                   </span>
@@ -152,14 +153,15 @@ export default function ContactSection() {
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
                   style={{
-                    background: 'rgba(255,255,255,0.05)',
+                    background: 'var(--bg-secondary)',
                     border: '1px solid var(--border)',
                   }}
                 >
                   <Icon
                     name="ArrowUpRightIcon"
                     size={16}
-                    className="text-white/40 group-hover:text-white transition-colors"
+                    className="transition-colors"
+                    style={{ color: 'var(--fg-muted)' }}
                   />
                 </div>
               </a>

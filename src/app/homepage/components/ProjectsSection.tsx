@@ -113,7 +113,7 @@ const projects: Project[] = [
     gradient: 'linear-gradient(135deg, #050510 0%, #070b1a 40%, #0a1030 70%, #050c22 100%)',
     patternColor: 'rgba(80,140,255,0.06)',
     image: '/assets/images/logo.png',
-    logoBg: 'rgba(255,255,255,0.05)',
+    logoBg: 'var(--bg-secondary)',
     bullets: [
       'Deployed the official RGIPT IEEE chapter platform with event registration workflows, a secure admin CMS, a Canvas API dynamic ID card generator, and a SendGrid email pipeline serving 980+ members.',
     ],
@@ -130,7 +130,7 @@ function WorkItem({ job, index }: { job: WorkExperience; index: number }) {
     <div
       className="reveal-up border-t cursor-none"
       style={{
-        borderColor: open ? 'rgba(200,255,0,0.3)' : 'rgba(255,255,255,0.07)',
+        borderColor: open ? 'rgba(200,255,0,0.3)' : 'var(--border)',
         transitionDelay: `${index * 0.09}s`,
         transition: 'border-color 0.4s ease',
       }}
@@ -157,10 +157,11 @@ function WorkItem({ job, index }: { job: WorkExperience; index: number }) {
         {/* Role + Company */}
         <div className="flex-1 min-w-0">
           <h3
-            className="font-display font-700 text-white leading-tight group-hover:text-white transition-colors"
+            className="font-display font-700 leading-tight transition-colors"
             style={{
               fontSize: 'clamp(1rem, 2.2vw, 1.45rem)',
               letterSpacing: '-0.025em',
+              color: 'var(--fg)',
             }}
           >
             {job.role}
@@ -193,8 +194,8 @@ function WorkItem({ job, index }: { job: WorkExperience; index: number }) {
         <div
           className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-400"
           style={{
-            border: `1px solid ${open ? 'rgba(200,255,0,0.4)' : 'rgba(255,255,255,0.1)'}`,
-            background: open ? 'rgba(200,255,0,0.08)' : 'transparent',
+            border: `1px solid ${open ? 'rgba(200,255,0,0.4)' : 'var(--border-hover)'}`,
+            background: open ? 'rgba(200,255,0,0.08)' : 'var(--bg-card)',
           }}
         >
           <svg
@@ -205,7 +206,7 @@ function WorkItem({ job, index }: { job: WorkExperience; index: number }) {
             style={{
               transform: open ? 'rotate(45deg)' : 'rotate(0deg)',
               transition: 'transform 0.4s cubic-bezier(0.16,1,0.3,1)',
-              color: open ? 'var(--accent)' : 'rgba(255,255,255,0.4)',
+              color: open ? 'var(--accent)' : 'var(--fg-muted)',
             }}
           >
             <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -236,8 +237,8 @@ function WorkItem({ job, index }: { job: WorkExperience; index: number }) {
                 key={m.label}
                 className="rounded-xl p-4"
                 style={{
-                  background: 'rgba(200,255,0,0.04)',
-                  border: '1px solid rgba(200,255,0,0.1)',
+                  background: 'color-mix(in srgb, var(--accent) 6%, var(--bg-card))',
+                  border: '1px solid color-mix(in srgb, var(--accent) 18%, var(--border))',
                 }}
               >
                 <span
@@ -269,7 +270,7 @@ function WorkItem({ job, index }: { job: WorkExperience; index: number }) {
             className="group inline-flex items-center gap-3 mb-7 cursor-none"
           >
             <span
-              className="text-[10px] font-display font-600 uppercase tracking-[0.18em] transition-colors duration-300 group-hover:text-white"
+              className="text-[10px] font-display font-600 uppercase tracking-[0.18em] transition-colors duration-300"
               style={{ color: 'var(--fg-muted)' }}
             >
               {job.projectName}
@@ -301,9 +302,9 @@ function WorkItem({ job, index }: { job: WorkExperience; index: number }) {
                 key={s}
                 className="text-[9px] font-display font-600 uppercase tracking-[0.12em] px-3 py-1.5 rounded-full"
                 style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  color: 'rgba(255,255,255,0.4)',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: 'var(--bg-secondary)',
+                  color: 'var(--fg-muted)',
+                  border: '1px solid var(--border)',
                 }}
               >
                 {s}
@@ -341,7 +342,7 @@ function ProjectFeatureCard({ project, index }: { project: Project; index: numbe
       className="reveal-up relative overflow-hidden cursor-none"
       style={{
         transitionDelay: `${index * 0.1}s`,
-        borderTop: '1px solid rgba(255,255,255,0.07)',
+        borderTop: '1px solid var(--border)',
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -394,7 +395,7 @@ function ProjectFeatureCard({ project, index }: { project: Project; index: numbe
             overflow: 'hidden',
             flexShrink: 0,
             background: project.logoBg,
-            border: `1px solid ${hovered ? 'rgba(255,255,255,0.14)' : 'rgba(255,255,255,0.07)'}`,
+            border: `1px solid ${hovered ? 'var(--border-hover)' : 'var(--border)'}`,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -420,11 +421,12 @@ function ProjectFeatureCard({ project, index }: { project: Project; index: numbe
         <div className="flex-1 min-w-0">
           <div className="flex items-baseline gap-3 flex-wrap">
             <h3
-              className="font-display font-700 text-white"
+              className="font-display font-700"
               style={{
                 fontSize: 'clamp(1.1rem, 2.5vw, 1.55rem)',
                 letterSpacing: '-0.03em',
                 lineHeight: 1.1,
+                color: 'var(--fg)',
                 transition: 'letter-spacing 0.4s ease',
               }}
             >
@@ -452,12 +454,12 @@ function ProjectFeatureCard({ project, index }: { project: Project; index: numbe
             className="cursor-none inline-flex items-center gap-1.5 mt-1.5"
             onClick={(e) => e.stopPropagation()}
           >
-            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" style={{ color: 'rgba(255,255,255,0.2)', flexShrink: 0 }}>
+            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" style={{ color: 'var(--fg-subtle)', flexShrink: 0 }}>
               <path d="M1 8L8 1M3 1h5v5" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             <span
               className="font-body text-[11px] transition-colors duration-300"
-              style={{ color: hovered ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.2)', letterSpacing: '0.01em' }}
+              style={{ color: hovered ? 'var(--fg-muted)' : 'var(--fg-subtle)', letterSpacing: '0.01em' }}
             >
               {project.displayUrl}
             </span>
@@ -477,9 +479,9 @@ function ProjectFeatureCard({ project, index }: { project: Project; index: numbe
                 key={s}
                 className="text-[9px] font-display font-600 uppercase tracking-[0.1em] px-2.5 py-1 rounded-full"
                 style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  color: 'rgba(255,255,255,0.35)',
-                  border: '1px solid rgba(255,255,255,0.07)',
+                  background: 'var(--bg-secondary)',
+                  color: 'var(--fg-muted)',
+                  border: '1px solid var(--border)',
                 }}
               >
                 {s}
@@ -506,8 +508,8 @@ function ProjectFeatureCard({ project, index }: { project: Project; index: numbe
               width: '32px',
               height: '32px',
               borderRadius: '50%',
-              border: `1px solid ${expanded ? 'rgba(200,255,0,0.4)' : 'rgba(255,255,255,0.1)'}`,
-              background: expanded ? 'rgba(200,255,0,0.07)' : 'transparent',
+              border: `1px solid ${expanded ? 'rgba(200,255,0,0.4)' : 'var(--border-hover)'}`,
+              background: expanded ? 'rgba(200,255,0,0.07)' : 'var(--bg-card)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -521,7 +523,7 @@ function ProjectFeatureCard({ project, index }: { project: Project; index: numbe
               viewBox="0 0 12 12"
               fill="none"
               style={{
-                color: expanded ? 'var(--accent)' : 'rgba(255,255,255,0.4)',
+                color: expanded ? 'var(--accent)' : 'var(--fg-muted)',
                 transform: expanded ? 'rotate(45deg)' : 'rotate(0deg)',
                 transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1), color 0.3s ease',
               }}
@@ -541,8 +543,8 @@ function ProjectFeatureCard({ project, index }: { project: Project; index: numbe
               width: '32px',
               height: '32px',
               borderRadius: '50%',
-              border: '1px solid rgba(255,255,255,0.1)',
-              background: hovered ? 'rgba(255,255,255,0.07)' : 'transparent',
+              border: '1px solid var(--border)',
+              background: hovered ? 'var(--bg-secondary)' : 'transparent',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -556,7 +558,7 @@ function ProjectFeatureCard({ project, index }: { project: Project; index: numbe
               viewBox="0 0 11 11"
               fill="none"
               style={{
-                color: 'rgba(255,255,255,0.5)',
+                color: 'var(--fg-muted)',
                 transform: hovered ? 'translate(1px,-1px)' : 'translate(0,0)',
                 transition: 'transform 0.3s ease',
               }}
@@ -579,7 +581,7 @@ function ProjectFeatureCard({ project, index }: { project: Project; index: numbe
       >
         <div
           className="pl-6 md:pl-8 pr-4 md:pr-6 pb-8"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '24px' }}
+          style={{ borderTop: '1px solid var(--border)', paddingTop: '24px' }}
         >
           {/* Subtitle on mobile */}
           <p className="font-body text-sm mb-5 md:hidden" style={{ color: 'var(--fg-muted)' }}>
@@ -657,16 +659,17 @@ export default function ProjectsSection() {
                 Work Experience
               </span>
               <h2
-                className="reveal-up delay-100 font-display font-800 text-white"
+                className="reveal-up delay-100 font-display font-800"
                 style={{
                   fontSize: 'clamp(2.2rem, 6vw, 4.5rem)',
                   letterSpacing: '-0.04em',
                   lineHeight: '0.95',
+                  color: 'var(--fg)',
                 }}
               >
                 Things I&apos;ve
                 <br />
-                <span style={{ color: 'rgba(255,255,255,0.2)' }}>shipped.</span>
+                <span style={{ color: 'var(--fg-subtle)' }}>shipped.</span>
               </h2>
             </div>
 
@@ -674,8 +677,8 @@ export default function ProjectsSection() {
             <div
               className="reveal-up delay-200 shrink-0 flex items-center gap-3 self-start sm:self-end"
               style={{
-                background: 'rgba(255,255,255,0.03)',
-                border: '1px solid rgba(255,255,255,0.07)',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--border)',
                 borderRadius: '100px',
                 padding: '10px 18px',
               }}
@@ -699,7 +702,7 @@ export default function ProjectsSection() {
               <WorkItem key={job.id} job={job} index={i} />
             ))}
             {/* Bottom border */}
-            <div className="border-t" style={{ borderColor: 'rgba(255,255,255,0.07)' }} />
+            <div className="border-t" style={{ borderColor: 'var(--border)' }} />
           </div>
         </div>
 
@@ -716,16 +719,17 @@ export default function ProjectsSection() {
                 Projects
               </span>
               <h2
-                className="reveal-up delay-100 font-display font-800 text-white"
+                className="reveal-up delay-100 font-display font-800"
                 style={{
                   fontSize: 'clamp(2.2rem, 6vw, 4.5rem)',
                   letterSpacing: '-0.04em',
                   lineHeight: '0.95',
+                  color: 'var(--fg)',
                 }}
               >
                 Things I&apos;ve
                 <br />
-                <span style={{ color: 'rgba(255,255,255,0.2)' }}>built.</span>
+                <span style={{ color: 'var(--fg-subtle)' }}>built.</span>
               </h2>
             </div>
 
@@ -736,7 +740,7 @@ export default function ProjectsSection() {
               className="reveal-up delay-200 group flex items-center gap-3 cursor-none self-start sm:self-end"
             >
               <span
-                className="text-[10px] font-display font-600 uppercase tracking-[0.18em] transition-colors duration-300 group-hover:text-white"
+                className="text-[10px] font-display font-600 uppercase tracking-[0.18em] transition-colors duration-300"
                 style={{ color: 'var(--fg-muted)' }}
               >
                 All on GitHub
@@ -749,7 +753,7 @@ export default function ProjectsSection() {
           </div>
 
           {/* Project cards */}
-          <div style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+          <div style={{ borderBottom: '1px solid var(--border)' }}>
             {projects.map((project, i) => (
               <ProjectFeatureCard key={project.id} project={project} index={i} />
             ))}

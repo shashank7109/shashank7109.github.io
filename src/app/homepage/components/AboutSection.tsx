@@ -91,8 +91,8 @@ function MarqueeRow({ items, direction = 'left', speed = 30 }: MarqueeRowProps) 
             key={`${item.name}-${idx}`}
             className="tech-card group flex flex-col items-center justify-center gap-2 px-5 py-4 rounded-xl cursor-none"
             style={{
-              background: 'rgba(255,255,255,0.03)',
-              border: '1px solid rgba(255,255,255,0.06)',
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border)',
               minWidth: '90px',
               transition: 'border-color 0.3s ease, background 0.3s ease, transform 0.3s ease',
             }}
@@ -113,7 +113,7 @@ function MarqueeRow({ items, direction = 'left', speed = 30 }: MarqueeRowProps) 
             />
             <span
               className="text-[10px] font-display font-600 uppercase tracking-[0.12em] whitespace-nowrap"
-              style={{ color: 'rgba(255,255,255,0.3)', transition: 'color 0.35s ease' }}
+              style={{ color: 'var(--fg-muted)', transition: 'color 0.35s ease' }}
             >
               {item.name}
             </span>
@@ -164,8 +164,8 @@ export default function AboutSection() {
           100% { transform: translateX(0); }
         }
         .tech-card:hover {
-          background: rgba(255,255,255,0.07) !important;
-          border-color: rgba(200,255,0,0.2) !important;
+          background: color-mix(in srgb, var(--fg) 4%, var(--bg-card)) !important;
+          border-color: var(--border-hover) !important;
           transform: scale(1.08);
         }
         .tech-card:hover .tech-logo {
@@ -173,7 +173,7 @@ export default function AboutSection() {
           transform: scale(1.1);
         }
         .tech-card:hover span {
-          color: rgba(255,255,255,0.8) !important;
+          color: var(--fg) !important;
         }
       `}</style>
 
@@ -193,24 +193,24 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-20 items-start mb-24 md:mb-32">
           <div className="lg:col-span-5">
             <h2
-              className="reveal-up font-display font-800 text-white mb-8"
+              className="reveal-up font-display font-800 mb-8"
               style={{
                 fontSize: 'clamp(2.2rem, 5vw, 4rem)',
                 letterSpacing: '-0.03em',
                 lineHeight: '1.0',
+                color: 'var(--fg)',
               }}
             >
               Engineering at
               <br />
-              <span style={{ color: 'rgba(255,255,255,0.3)' }}>the intersection.</span>
+              <span style={{ color: 'var(--fg-subtle)' }}>the intersection.</span>
             </h2>
             <p
               className="reveal-up delay-100 font-body text-base leading-relaxed mb-6"
               style={{ color: 'var(--fg-muted)' }}
             >
-              I'm Shashank — a B.Tech IT student at RGIPT, building
-              across the full stack. From pixel-perfect web interfaces to production-grade
-              AI pipelines, I care about the craft at every layer.
+              I'm Shashank — a B.Tech IT student at RGIPT, building across the full stack.
+              From pixel-perfect web interfaces to production-grade AI pipelines, I care about the craft at every layer.
             </p>
             <p
               className="reveal-up delay-200 font-body text-base leading-relaxed"
@@ -239,8 +239,8 @@ export default function AboutSection() {
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
                     <div>
                       <h3
-                        className="font-display font-700 text-white"
-                        style={{ fontSize: '1rem', letterSpacing: '-0.02em' }}
+                        className="font-display font-700"
+                        style={{ fontSize: '1rem', letterSpacing: '-0.02em', color: 'var(--fg)' }}
                       >
                         {edu.institution}
                       </h3>
@@ -273,15 +273,16 @@ export default function AboutSection() {
               <div className="reveal-up pt-2">
                 <a
                   href="/assets/resume/Shashank_resume.pdf"
-                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center gap-3 cursor-none"
-                  aria-label="Download Resume"
+                  aria-label="Open Resume in browser"
                 >
                   <span
                     className="text-[11px] font-display font-600 uppercase tracking-[0.2em] transition-colors duration-300"
                     style={{ color: 'var(--accent)' }}
                   >
-                    Download Résumé
+                    Open Résumé
                   </span>
                   <div
                     className="h-[1px] w-6 group-hover:w-12 transition-all duration-400"

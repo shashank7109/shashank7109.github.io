@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Left: Logo + copyright */}
         <div className="flex items-center gap-3">
           <AppLogo size={22} />
-          <span className="font-display text-[11px] font-500 text-white/25 tracking-[0.06em] uppercase">
+          <span className="font-display text-[11px] font-500 tracking-[0.06em] uppercase" style={{ color: 'var(--fg-subtle)' }}>
             © 2026 Shashank Bindal
           </span>
         </div>
@@ -19,7 +19,8 @@ export default function Footer() {
             href="https://linkedin.com/in/shashankbindal07"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[11px] font-display font-500 uppercase tracking-[0.08em] text-white/25 hover:text-white/60 transition-colors duration-300"
+            className="text-[11px] font-display font-500 uppercase tracking-[0.08em] hover:opacity-80 transition-opacity duration-300"
+            style={{ color: 'var(--fg-subtle)' }}
           >
             LinkedIn
           </a>
@@ -27,7 +28,8 @@ export default function Footer() {
             href="https://github.com/shashank7109"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[11px] font-display font-500 uppercase tracking-[0.08em] text-white/25 hover:text-white/60 transition-colors duration-300"
+            className="text-[11px] font-display font-500 uppercase tracking-[0.08em] hover:opacity-80 transition-opacity duration-300"
+            style={{ color: 'var(--fg-subtle)' }}
           >
             GitHub
           </a>
