@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=630&fit=crop',
+        url: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&h=630&fit=crop&q=80',
         width: 1200,
         height: 630,
-        alt: 'Person working at laptop — internship hustle',
+        alt: 'Golden hour light over an open road',
       },
     ],
   },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: 'The Summer I Promised Myself | Shashank Bindal',
     description:
       'On chasing internships, getting humbled by silence, and what nobody warns you about the gap between ambition and reality.',
-    images: ['https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=630&fit=crop'],
+    images: ['https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&h=630&fit=crop&q=80'],
   },
 };
 

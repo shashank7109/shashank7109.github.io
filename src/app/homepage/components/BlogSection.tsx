@@ -5,8 +5,8 @@ const BLOG_POSTS = [
   {
     id: 'blog-1',
     href: '/blog',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&h=700&fit=crop',
-    imageAlt: 'Engineering student coding at a laptop',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&h=700&fit=crop&q=80',
+    imageAlt: 'Misty mountain landscape at dawn',
     date: 'April 2026',
     tag: 'Personal',
     title: 'The engineering student who got tired of waiting to build something real',
@@ -16,8 +16,8 @@ const BLOG_POSTS = [
   {
     id: 'blog-2',
     href: '/blog/summer-promise',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&h=700&fit=crop',
-    imageAlt: 'Open laptop on a desk — cold-emailing season',
+    image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=900&h=700&fit=crop&q=80',
+    imageAlt: 'Golden hour light over an open road',
     date: 'May 2025',
     tag: 'Personal',
     title: "I promised myself I wouldn't go home this summer.",
