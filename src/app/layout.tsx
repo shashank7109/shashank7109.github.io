@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomCursor from '@/components/CustomCursor';
 import type { Metadata, Viewport } from 'next';
 import { Manrope, DM_Sans, Pixelify_Sans } from 'next/font/google';
 import '../styles/tailwind.css';
@@ -114,7 +115,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}
+      <body>
+        <CustomCursor />
+        {children}
 
         <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fshashankpo8729back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.17" />
         <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2" /></body>

@@ -6,11 +6,7 @@ import Image from 'next/image';
 const ROLES = ['Full-Stack Engineer', 'AI-ML Builder', 'Open Source Contributor'];
 
 export default function HeroSection() {
-  const cursorDotRef = useRef<HTMLDivElement>(null);
-  const cursorRingRef = useRef<HTMLDivElement>(null);
   const imageCardRef = useRef<HTMLDivElement>(null);
-  const mouseRef = useRef({ x: 0, y: 0 });
-  const ringPos = useRef({ x: 0, y: 0 });
   const tiltRef = useRef({ x: 0, y: 0 });
   const [heroVisible, setHeroVisible] = useState(false);
   const [roleIndex, setRoleIndex] = useState(0);
@@ -41,41 +37,6 @@ export default function HeroSection() {
 
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, roleIndex]);
-
-  // Custom cursor
-  useEffect(() => {
-    const dot = cursorDotRef.current;
-    const ring = cursorRingRef.current;
-    if (!dot || !ring) return;
-
-    const moveMouse = (e: MouseEvent) => {
-      mouseRef.current = { x: e.clientX, y: e.clientY };
-      dot.style.left = `${e.clientX}px`;
-      dot.style.top = `${e.clientY}px`;
-    };
-
-    const animateRing = () => {
-      ringPos.current.x += (mouseRef.current.x - ringPos.current.x) * 0.12;
-      ringPos.current.y += (mouseRef.current.y - ringPos.current.y) * 0.12;
-      ring.style.left = `${ringPos.current.x}px`;
-      ring.style.top = `${ringPos.current.y}px`;
-      requestAnimationFrame(animateRing);
-    };
-    animateRing();
-
-    const addHover = () => document.body.classList.add('cursor-hover');
-    const removeHover = () => document.body.classList.remove('cursor-hover');
-
-    document.addEventListener('mousemove', moveMouse);
-    document.querySelectorAll('a, button, [data-cursor]').forEach((el) => {
-      el.addEventListener('mouseenter', addHover);
-      el.addEventListener('mouseleave', removeHover);
-    });
-
-    return () => {
-      document.removeEventListener('mousemove', moveMouse);
-    };
-  }, []);
 
   useEffect(() => {
     const card = imageCardRef.current;
@@ -118,12 +79,6 @@ export default function HeroSection() {
 
   return (
     <>
-      {/* Custom cursor */}
-      <div className="cursor" aria-hidden="true">
-        <div ref={cursorDotRef} className="cursor-dot absolute" style={{ willChange: 'left, top' }} />
-        <div ref={cursorRingRef} className="cursor-ring absolute" style={{ willChange: 'left, top' }} />
-      </div>
-
       {/* Hero section */}
       <section
         id="hero"
