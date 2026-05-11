@@ -5,31 +5,33 @@ import Footer from '@/components/Footer';
 import BlogPost from './components/BlogPost';
 
 export const metadata: Metadata = {
-  title: 'Blog | Shashank Bindal',
-  description: 'Build notes, lessons, and engineering reflections from Shashank Bindal.',
+  title: 'Blog',
+  description: 'Build notes, engineering reflections, and personal stories from Shashank Bindal — Full-Stack & AI Engineer at RGIPT Amethi.',
   alternates: {
-    canonical: '/blog',
+    canonical: 'https://shashankbindal.me/blog',
   },
   openGraph: {
     title: 'Blog | Shashank Bindal',
-    description: 'Build notes, lessons, and engineering reflections from Shashank Bindal.',
-    url: '/blog',
+    description: 'Build notes, engineering reflections, and personal stories from Shashank Bindal.',
+    url: 'https://shashankbindal.me/blog',
     siteName: 'Shashank Bindal — Software Engineer',
-    type: 'article',
+    type: 'website',
     images: [
       {
-        url: '/assets/images/shashank_image.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Shashank Bindal portrait',
+        alt: 'Shashank Bindal — Blog',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@shashankbindal07',
+    creator: '@shashankbindal07',
     title: 'Blog | Shashank Bindal',
-    description: 'Build notes, lessons, and engineering reflections from Shashank Bindal.',
-    images: ['/assets/images/shashank_image.png'],
+    description: 'Build notes, engineering reflections, and personal stories from Shashank Bindal.',
+    images: ['/og-image.png'],
   },
 };
 
