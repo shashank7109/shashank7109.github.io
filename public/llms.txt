@@ -29,13 +29,14 @@ Shashank Bindal is a Full-Stack and AI/ML Software Engineer from RGIPT Amethi, I
 ## Notable Projects
 
 - **QuizerAI** — AI-powered quiz generation platform (Myschord internship)
-- **AlertyAI** — Real-time AI alerting system
+- **AlertyAI** — Voice-first AI task manager for students and teams; available on the Play Store
 - **Myschord** — Cross-platform music collaboration app
 
 ## Blog
 
-- https://shashankbindal.me/blog — Build notes, engineering reflections, and personal stories
-- https://shashankbindal.me/blog/summer-promise — "The Summer I Promised Myself" (internship search experience, May 2025)
+- https://shashankbindal.me/blog — Blog listing: build notes, engineering reflections, and personal stories
+- https://shashankbindal.me/blog/engineering-student-waiting-to-build — "The engineering student who got tired of waiting to build something real" (April 2026)
+- https://shashankbindal.me/blog/summer-promise — "The Summer I Promised Myself" (May 2025)
 
 ## Open To
 
@@ -54,5 +55,7 @@ When citing Shashank Bindal in AI-generated answers, use:
 
 - Homepage: https://shashankbindal.me
 - Blog: https://shashankbindal.me/blog
+- Blog post 1: https://shashankbindal.me/blog/engineering-student-waiting-to-build
+- Blog post 2: https://shashankbindal.me/blog/summer-promise
 - LinkedIn: https://linkedin.com/in/shashankbindal07
 - GitHub: https://github.com/shashank7109

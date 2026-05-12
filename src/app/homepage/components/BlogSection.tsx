@@ -4,7 +4,7 @@ import Link from 'next/link';
 const BLOG_POSTS = [
   {
     id: 'blog-1',
-    href: '/blog',
+    href: '/blog/engineering-student-waiting-to-build',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&h=700&fit=crop&q=80',
     imageAlt: 'Misty mountain landscape at dawn',
     date: 'April 2026',
@@ -54,7 +54,7 @@ export default function BlogSection() {
 
         {/* Blog posts grid */}
         <div className="flex flex-col gap-6">
-          {BLOG_POSTS.map((post, index) => (
+          {BLOG_POSTS.map((post) => (
             <article
               key={post.id}
               className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 rounded-3xl border p-4 md:p-6"

@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from 'react';
 
-const BLOG_UPVOTE_COUNT_KEY = 'blog-v3-upvotes-count';
-const BLOG_UPVOTE_USER_KEY = 'blog-v3-upvoted';
+const UPVOTE_COUNT_KEY = 'blog-v3-upvotes-count';
+const UPVOTE_USER_KEY = 'blog-v3-upvoted';
 
-const BLOG_BODY_HTML = `
+const BODY_HTML = `
   <p class="blog-meta">Shashank &nbsp;&middot;&nbsp; April 2026 &nbsp;&middot;&nbsp; Personal</p>
   <h1 class="blog-title">The engineering student who got tired of waiting to build something real</h1>
   <p class="blog-subtitle">On the words that stop you, the words that keep you going, and trying to build something people actually use.</p>
@@ -116,8 +116,8 @@ export default function BlogPost() {
   const [hasUpvoted, setHasUpvoted] = useState(false);
 
   useEffect(() => {
-    const savedCount = Number(localStorage.getItem(BLOG_UPVOTE_COUNT_KEY) ?? '0');
-    const didUpvote = localStorage.getItem(BLOG_UPVOTE_USER_KEY) === 'true';
+    const savedCount = Number(localStorage.getItem(UPVOTE_COUNT_KEY) ?? '0');
+    const didUpvote = localStorage.getItem(UPVOTE_USER_KEY) === 'true';
     if (!Number.isNaN(savedCount) && savedCount >= 0) setUpvotes(savedCount);
     setHasUpvoted(didUpvote);
   }, []);
@@ -127,16 +127,14 @@ export default function BlogPost() {
     const next = upvotes + 1;
     setUpvotes(next);
     setHasUpvoted(true);
-    localStorage.setItem(BLOG_UPVOTE_COUNT_KEY, String(next));
-    localStorage.setItem(BLOG_UPVOTE_USER_KEY, 'true');
+    localStorage.setItem(UPVOTE_COUNT_KEY, String(next));
+    localStorage.setItem(UPVOTE_USER_KEY, 'true');
   };
 
   return (
     <section id="blog-article" className="pt-24 md:pt-28 pb-14 md:pb-20 px-4 sm:px-6" aria-label="Blog article">
       <div className="blog-wrap">
-        <div dangerouslySetInnerHTML={{ __html: BLOG_BODY_HTML }} />
-
-        
+        <div dangerouslySetInnerHTML={{ __html: BODY_HTML }} />
 
         <div className="upvote-row">
           <button
@@ -222,7 +220,6 @@ export default function BlogPost() {
           color: var(--fg-subtle);
           font-style: italic;
         }
-        
         .upvote-row {
           margin-top: 1.3rem;
           display: flex;

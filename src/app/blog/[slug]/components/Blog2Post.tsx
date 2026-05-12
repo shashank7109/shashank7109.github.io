@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from 'react';
 
-const BLOG2_UPVOTE_COUNT_KEY = 'blog-summer-promise-upvotes-count';
-const BLOG2_UPVOTE_USER_KEY = 'blog-summer-promise-upvoted';
+const UPVOTE_COUNT_KEY = 'blog-summer-promise-upvotes-count';
+const UPVOTE_USER_KEY = 'blog-summer-promise-upvoted';
 
-const BLOG2_BODY_HTML = `
+const BODY_HTML = `
   <p class="blog-meta">Shashank &nbsp;&middot;&nbsp; May 2025 &nbsp;&middot;&nbsp; Personal</p>
   <h1 class="blog-title">I promised myself I wouldn't go home this summer.</h1>
   <p class="blog-subtitle">On chasing internships, getting humbled by silence, and what nobody warns you about the gap between ambition and reality.</p>
@@ -96,8 +96,8 @@ export default function Blog2Post() {
   const [hasUpvoted, setHasUpvoted] = useState(false);
 
   useEffect(() => {
-    const savedCount = Number(localStorage.getItem(BLOG2_UPVOTE_COUNT_KEY) ?? '0');
-    const didUpvote = localStorage.getItem(BLOG2_UPVOTE_USER_KEY) === 'true';
+    const savedCount = Number(localStorage.getItem(UPVOTE_COUNT_KEY) ?? '0');
+    const didUpvote = localStorage.getItem(UPVOTE_USER_KEY) === 'true';
     if (!Number.isNaN(savedCount) && savedCount >= 0) setUpvotes(savedCount);
     setHasUpvoted(didUpvote);
   }, []);
@@ -107,14 +107,14 @@ export default function Blog2Post() {
     const next = upvotes + 1;
     setUpvotes(next);
     setHasUpvoted(true);
-    localStorage.setItem(BLOG2_UPVOTE_COUNT_KEY, String(next));
-    localStorage.setItem(BLOG2_UPVOTE_USER_KEY, 'true');
+    localStorage.setItem(UPVOTE_COUNT_KEY, String(next));
+    localStorage.setItem(UPVOTE_USER_KEY, 'true');
   };
 
   return (
     <section id="blog-article-2" className="pt-24 md:pt-28 pb-14 md:pb-20 px-4 sm:px-6" aria-label="Blog article: The Summer I Promised Myself">
       <div className="blog-wrap">
-        <div dangerouslySetInnerHTML={{ __html: BLOG2_BODY_HTML }} />
+        <div dangerouslySetInnerHTML={{ __html: BODY_HTML }} />
 
         <div className="upvote-row">
           <button
@@ -213,7 +213,6 @@ export default function Blog2Post() {
           text-decoration: underline;
           text-underline-offset: 3px;
         }
-
         .upvote-row {
           max-width: 680px;
           margin: 0 auto;
